@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hidden page</title>
+    </head>
+ 
+<body>
+
+<h2>Hidden things by Rehaman</h2>
+
+<form>
+    <label for="form1_age">Enter the secret phrase</label>
+    <input type ="password" id="a" name="form1_age" value=Let me in> <br>
+    <br>
+    <label for="form1_nick">Enter a phrase</label>
+    <input type ="text" id="b" name="form1_nick" autofocus> <br>
+    <br>
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+
+var correct = 0;
+var wrong = 0;
+function processPhrase (){
+    console.log("Getting form values")
+    var m1 = document.getElementById('a').value;
+    var m2 = document.getElementById('b').value;
+
+    if (m1 == m2) {
+        correct ++;
+        alert("Access allowed");
+        document.getElementById("result").innerHTML = correct;
+    } 
+    else {
+        wrong++;
+        alret("Access denied"); 
+        document.getElementById("result").innerHTML = wrong;
+    }
+
+}
+</script>
+
+</body>
+</html> 
