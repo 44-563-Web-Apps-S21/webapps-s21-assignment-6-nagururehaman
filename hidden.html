@@ -22,26 +22,26 @@
 <p id="result"></p>
 
 <script> 
-
-var correct = 0;
-var wrong = 0;
-function processPhrase (){
+    var correct=0;
+    var wrong=0;
+    function processPhrase() {
     console.log("Getting form values")
-    var m1 = document.getElementById('a').value;
-    var m2 = document.getElementById('b').value;
-
-    if (m1 == m2) {
-        correct ++;
+    m1 = document.getElementById("a").value
+    m2 = document.getElementById("b").value
+    
+    out = document.getElementById("result")
+    if(m1 == m2){
+        correct++
         alert("Access allowed");
-        document.getElementById("result").innerHTML = correct;
-    } 
-    else {
-        wrong++;
-        alret("Access denied"); 
-        document.getElementById("result").innerHTML = wrong;
+        out.innerHTML = "Correct Pharase Attempt :" + correct ;
+    } else {
+        wrong++
+        alert("Access denied");
+        out.innerHTML = "Wrong Pharase Attempt :" + wrong;
     }
-
 }
+
+
 </script>
 
 </body>
