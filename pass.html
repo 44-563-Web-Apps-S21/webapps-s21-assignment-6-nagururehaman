@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hidden page</title>
+        <title>Rehaman's page</title>
     </head>
  
 <body>
@@ -45,20 +45,38 @@
 <br>
 <br>
 <div class="container">
+    <img id ="Numbat" src="Numbat.jpg" onclick="newImage()" height="200" weight="200">
+    
+    <script>
 
-    <img src="Numbat.jpg" width="200" height="200" type="button" onclick="newImage()" value="newImage()">
+        var usingImage=1;
+        function newImage(){
 
-</div>
-<script>
-    var usingImage=1;
-    function newImage() {
+            switch(usingImage){
+                case 0:                        
+                    var x=document.getElementById("Numbat").src="Numbat.jpg";                        
+                    usingImage++;
+                    break;
 
-        switch(usingImage) {
-            case 1:
-                <img src="Nu">
-        }
+                case 1:
+                    var y=document.getElementById("Numbat").src="Aardwolf.jpg";
+                    usingImage++;
+                    break;
+
+                case 2:
+                    var z=document.getElementById("Numbat").src="Goat.jpg";                        
+                    usingImage++;
+                    break;
+                default:
+                var x=document.getElementById("Numbat").src="Numbat.jpg";                        
+                    usingImage=1;
+                    break;
+
+            }
+
     }
-</script>
-
+    </script>
+    
+</div>
 </body>
 </html> 

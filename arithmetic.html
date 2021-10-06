@@ -8,37 +8,46 @@
 <h2>Rehaman Computes</h2>
 
 <form>
-    <label for="base1">Enter a base</label>
-    <input type ="number" id="base1" name="base1" value=10> <br>
+   
+    <label>Enter a number </label>
+    <input type="number" id="base" class="form-control"
+      value="10" placeholder="Enter a base">
+        <br>
+        <br>
+    <label>Enter a power</label>
+    <input type="number" class="form-control" id="exponent"
+      value="2" placeholder="Enter an exponent">
+    <br>
+    <br>
+    <input type="button" class="btn btn-success btn-md"
+      onclick="powers()" value="Compute">
+ 
+      <p class="text-warning" id="result"></p>
 
-    <label for="exponent1">Enter an exponent</label>
-    <input type ="number" id="exponent1" name="exponent1" value=20> <br>
-
-    <input type="button" onclick="powers()" value="Compute">
 </form>
 
 
-<p id="result"> </p>
+
 
 <script> 
 
-function powers(){
-    console.log("Getting form values")
-    let b1 = document.getElementById("base1").value
-    let b2 = document.getElementById("exponent1").value
-    out = document.getElementById("result")
-   
-    for (let i = 1; i < b2; i++) {
-        let res = " ";
-        res += Math.pow(b1, i);
-        out.innerHTML = "Powers of three are :" + res   
+let res = " ";
+function powers() {
 
-    }
-    
-    
-    
-    
+b1 = document.getElementById("base").value
+b2 = document.getElementById("exponent").value
+
+   var res = "Powers of " + b1 + " are: "
+   res1 = 1
+   out = document.getElementById("result")
+
+   for (i = 1; i <= b2; i++) {
+       res1 *= b1;
+       res+= res1+ " "
+   }
+   out.innerHTML = res
 }
+    
 </script>
 
 </body>
