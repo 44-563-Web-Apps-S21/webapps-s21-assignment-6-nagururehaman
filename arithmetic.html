@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title> Rehaman's Arithmetic Page</title>
+ </head>
+<body>
+
+<h2>Rehaman Computes</h2>
+
+<form>
+    <label for="base1">Enter a base</label>
+    <input type ="number" id="base1" name="base1" value=10> <br>
+
+    <label for="exponent1">Enter an exponent</label>
+    <input type ="number" id="exponent1" name="exponent1" value=20> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+
+function powers(){
+    console.log("Getting form values")
+    let b1 = document.getElementById("base1").value
+    let b2 = document.getElementById("exponent1").value
+    out = document.getElementById("result")
+   
+    for (let i = 1; i < b2; i++) {
+        let res = " ";
+        res += Math.pow(b1, i);
+        out.innerHTML = "Powers of three are :" + res   
+
+    }
+    
+    
+    
+    
+}
+</script>
+
+</body>
+</html> 
