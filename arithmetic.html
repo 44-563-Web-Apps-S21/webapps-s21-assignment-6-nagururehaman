@@ -3,9 +3,9 @@
  <head>
      <title> Rehaman's Arithmetic Page</title>
  </head>
-<body>
+<body background="arthm.jpg">
 
-<h2>Rehaman Computes</h2>
+<center><h3>Rehaman Computes</h3></center>
 
 <form>
    
@@ -31,24 +31,62 @@
 
 <script> 
 
-let res = " ";
+
 function powers() {
 
 b1 = document.getElementById("base").value
 b2 = document.getElementById("exponent").value
-
-   var res = "Powers of " + b1 + " are: "
-   res1 = 1
+res = " ";
+    
    out = document.getElementById("result")
 
    for (i = 1; i <= b2; i++) {
-       res1 *= b1;
-       res+= res1+ " "
+      
+       res = res + Math.pow(b1,i)+ " "
    }
-   out.innerHTML = res
+   out.innerHTML="Powers of "+b1+" are: "+res;
 }
     
 </script>
+
+
+<form>
+    <input type="radio" id="rg1_plus" value="plus" onclick="processRadio()" checked >
+    <label for="rg1_plus">+</label></br>
+  
+    <input type="radio" id="rg1_minus" value="minus" onclick="processRadio()">
+    <label for="rg1_minus">-</label></br>
+  
+    <input type="radio" id="rg1_multiplication" value="times" onclick="processRadio()">
+    <label for="rg1_multiplication">*</label></br>
+
+    <input type="radio" id="rg1_division" value="divide" onclick="processRadio()">
+    <label for="rg1_division">/</label></br>
+    
+  </form>
+  <p id=result2>Result Displays here</p>
+  <script>
+      function processRadio(){
+         
+          base = document.getElementById("base").value
+          exponent = document.getElementById("exponent").value
+          out1= document.getElementById("result2")
+          if(document.getElementById('rg1_plus').checked){
+              out1.innerHTML="result is: "+ (Number(base)+Number(exponent))
+          }
+          if(document.getElementById('rg1_minus').checked){
+              out1.innerHTML="result is: "+ (Number(base)-Number(exponent))
+          }
+          if(document.getElementById('rg1_multiplication').checked){
+              out1.innerHTML="result is: "+ (Number(base)*Number(exponent))
+          }
+          if(document.getElementById('rg1_division').checked){
+              out1.innerHTML="result is: "+ (Number(base)/Number(exponent))
+          }
+      }
+  </script>
+
+  
 
 </body>
 </html> 
