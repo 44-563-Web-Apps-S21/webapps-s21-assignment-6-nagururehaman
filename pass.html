@@ -24,6 +24,7 @@
 <script> 
     var correct=0;
     var wrong=0;
+    var count=0;
     function processPhrase() {
     console.log("Getting form values")
     m1 = document.getElementById("a").value
@@ -31,14 +32,25 @@
     
     out = document.getElementById("result")
     if(m1 == m2){
+        count=0;
         correct++
         alert("Access allowed");
         out.innerHTML = "Correct Phase Attempt :" + correct ;
     } else {
+        count++;
         wrong++
         alert("Access denied");
         out.innerHTML = "Wrong Phrase Attempt :" + wrong;
+        if(count >=3 ){
+            if(wrong >= 3){
+                 blockaccount()
+             }
+        }
     }
+}
+
+function blockaccount() {
+    alert("Account Locked")
 }
 
 </script>
