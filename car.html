@@ -6,79 +6,82 @@
         My Car Page
     </title>
 </head>
- 
+
 <style>
     body {
-  background-image: url('car2.jpg');
-}
+        background-image: url('car2.jpg');
+    }
 </style>
+
 <body>
 
-<center><h1>Rehaman's orders a car</h1></center>
-<center><i><h3>own your Dream Car</h3></i></center>
+    <center>
+        <h1>Rehaman's orders a car</h1>
+    </center>
+    <center><i>
+            <h3>own your Dream Car</h3>
+        </i></center>
 
-<form>
-    <label for="electric"><b>Electric </b></label>
-    <input type ="checkbox" id="electric" name="electric"> <br>
-    <br><br>
-    <label for="ac"><b>AC</b> </label>
-    <input type ="checkbox" id="ac" name="ac" autofocus> <br>
-    <br><br>
-    <label for="gps"><b>GPS</b></label>
-    <input type ="checkbox" id="gps" name="gps" autofocus> <br>
-    <br>
-    <input type="button" onclick="OrderCar()" value="Order a car">
-</form>
+    <form>
+        <label for="electric"><b>Electric </b></label>
+        <input type="checkbox" id="electric" name="electric"> <br>
+        <br><br>
+        <label for="ac"><b>AC</b> </label>
+        <input type="checkbox" id="ac" name="ac" autofocus> <br>
+        <br><br>
+        <label for="gps"><b>GPS</b></label>
+        <input type="checkbox" id="gps" name="gps" autofocus> <br>
+        <br>
+        <input type="button" onclick="OrderCar()" value="Order a car">
+    </form>
+
+    <p id="result">your selection displays here</p>
 
 
-<p id="result">your selection displays here</p>
+    <form>
+        <label for="namproperty">Enter a property </label>
+        <input type="text" id="namproperty" value="color" name="namproperty">
+        <br>
+        <br>
+        <label for="valProperty">Enter a value </label>
+        <input type="text" id="valProperty" name="valProperty" autofocus>
+        <br>
+        <br>
+        <input type="button" onclick="updateCar()" value="Update the car">
+    </form>
 
-<script> 
-var my_car={}
-out= document.getElementById("result")
-function OrderCar(){
-    Electric = document.getElementById("electric")
-    Ac = document.getElementById("ac")
-    Gps = document.getElementById("gps")
 
-        my_car = {
-            Electric: false,
-            AC: false,
-            GPS: false
+    <p id="res8">Results </p>
+
+    <script>
+
+        var my_car = {}
+        out = document.getElementById("result")
+        function OrderCar() {
+            Electric = document.getElementById("electric")
+            Ac = document.getElementById("ac")
+            Gps = document.getElementById("gps")
+
+            my_car = {
+                Electric: false,
+                AC: false,
+                GPS: false
             };
-        my_car.Electric = Electric.checked
-        my_car.AC = Ac.checked
-        my_car.GPS = Gps.checked
-        out.innerHTML = Object.values(my_car);
+            my_car.Electric = Electric.checked
+            my_car.AC = Ac.checked
+            my_car.GPS = Gps.checked
+            out.innerHTML = Object.values(my_car);
 
-}
-</script>
+        }
 
-
-<form>
-    <label for="namproperty">Enter a property </label>
-    <input type ="text" id="namproperty" value="color" name="namproperty">
-     <br>
-     <br>
-    <label for="valProperty">Enter a value </label>
-    <input type ="text" id="valProperty" name="valProperty" autofocus>
-     <br>
-     <br>
-    <input type="button" onclick="updateCar()" value="Update the car">
-</form>
-
-
-<p id="res8">Results </p>
-
-<script>
-    
-    function updateCar(){
-        my_car.prop= document.getElementById("namproperty").value;
-        my_car.valOfProp= document.getElementById("valProperty").value;
-        console.log(my_car)
-        document.getElementById("res8").innerHTML = Object.values(my_car);
-    }
-</script>
+        function updateCar() {
+            my_car.prop = document.getElementById("namproperty").value;
+            my_car.valOfProp = document.getElementById("valProperty").value;
+            console.log(my_car)
+            document.getElementById("res8").innerHTML = Object.values(my_car);
+        }
+    </script>
 
 </body>
-</html> 
+
+</html>
